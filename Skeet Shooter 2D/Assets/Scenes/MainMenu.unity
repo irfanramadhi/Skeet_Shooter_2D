@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 631182965}
   - component: {fileID: 631182966}
   m_Layer: 0
-  m_Name: Background Main Menu
+  m_Name: Bg-MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 968602171}
   - component: {fileID: 968602172}
   m_Layer: 0
-  m_Name: button play
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 1662282434}
   - component: {fileID: 1662282435}
   m_Layer: 0
-  m_Name: button how to play
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 2008958080}
   - component: {fileID: 2008958081}
   m_Layer: 0
-  m_Name: button quit
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
