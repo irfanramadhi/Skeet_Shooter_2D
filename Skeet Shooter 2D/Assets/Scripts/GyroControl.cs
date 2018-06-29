@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public class GyroControl : MonoBehaviour
 {
-    public Text gyroText;
-
-    public float gyroXhandler;
-    public float gyroYhandler;
-    public float gyroZhandler;
     private bool gyroEnabled;
     private Gyroscope gyro;
 
@@ -35,11 +30,6 @@ public class GyroControl : MonoBehaviour
         if (gyroEnabled)
         {
             transform.localRotation = gyro.attitude * rot;
-            gyroXhandler = transform.localRotation.eulerAngles.x;
-            gyroYhandler = transform.localRotation.eulerAngles.y;
-            gyroZhandler = transform.localRotation.eulerAngles.z;
-            gyroText.text = (gyroXhandler.ToString()) + "\n" + (gyroYhandler.ToString()) + "\n" + (gyroZhandler.ToString());
-            Debug.Log(gyroText.text);
         }
 
     }
@@ -51,7 +41,7 @@ public class GyroControl : MonoBehaviour
             gyro = Input.gyro;
             gyro.enabled = true;
 
-            cameraContainer.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            cameraContainer.transform.rotation = Quaternion.Euler(90f, 90f, 0f);
             rot = new Quaternion(0, 0, 1, 0);
 
             return true;

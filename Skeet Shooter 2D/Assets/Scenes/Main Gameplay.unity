@@ -257,7 +257,7 @@ Transform:
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172932064
 GameObject:
@@ -403,7 +403,7 @@ Transform:
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464778763
 GameObject:
@@ -895,7 +895,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -931,7 +931,7 @@ Transform:
   - {fileID: 464778764}
   - {fileID: 993277741}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1380366370
 MonoBehaviour:
@@ -944,10 +944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c4c8916baff6544a1fefd86d3d3614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gyroText: {fileID: 0}
-  gyroXhandler: 0
-  gyroYhandler: 0
-  gyroZhandler: 0
 --- !u!1 &2064211584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,5 +1015,5 @@ Transform:
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
