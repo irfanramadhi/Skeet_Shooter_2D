@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class GyroControl : MonoBehaviour
 {
+
+    public GameObject cubeBoundaries;
+    public Text debugText;
+    public Vector3 cubeBoundPosition;
     private bool gyroEnabled;
     private Gyroscope gyro;
 
@@ -31,6 +35,10 @@ public class GyroControl : MonoBehaviour
         {
             transform.localRotation = gyro.attitude * rot;
         }
+        
+        cubeBoundPosition = cubeBoundaries.transform.position;
+        Debug.Log(cubeBoundaries);
+        debugText.text = cubeBoundPosition.y + " ";
 
     }
 
@@ -48,10 +56,5 @@ public class GyroControl : MonoBehaviour
         }
         return false;
     }
-
-    public void SetGyro()
-    {
-        //gyroText.text = transform.localRotation.ToString;
-    }
-
+        
 }

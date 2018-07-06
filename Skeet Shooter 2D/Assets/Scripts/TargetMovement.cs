@@ -22,8 +22,8 @@ public class TargetMovement : MonoBehaviour {
         if (limitMove)
         {
             Vector2 dir = Vector2.zero;
-            dir.x = Input.acceleration.x;
-            dir.y = -Input.acceleration.z;
+            dir.x = Input.acceleration.x/2;
+            dir.y = -Input.acceleration.z/2;
 
             if (dir.sqrMagnitude > 1)
                 dir.Normalize();
