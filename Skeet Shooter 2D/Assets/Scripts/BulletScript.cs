@@ -23,7 +23,7 @@ public class BulletScript : MonoBehaviour
         {
             GameObject gameplayScore = GameObject.Find("EventSystem");
             Gameplay scoring = gameplayScore.GetComponent<Gameplay>();
-            scoring.currentScore = scoring.currentScore + 10;
+            scoring.currentScore = scoring.currentScore + 100;
             Destroy(collision.gameObject);
         }
     }
