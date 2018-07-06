@@ -861,7 +861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &313580633
 Transform:
   m_ObjectHideFlags: 0
@@ -1519,7 +1519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb018ef08b2f0a148bf4446af8c09e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeBoundaries: {fileID: 0}
+  scoreText: {fileID: 1511081022}
+  currentScore: 0
+  cubeBoundaries: {fileID: 117458902}
 --- !u!1 &993277739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubeBoundaries: {fileID: 117458902}
   debugText: {fileID: 1349569594}
+  cubeBoundPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1486769605
 GameObject:
   m_ObjectHideFlags: 0

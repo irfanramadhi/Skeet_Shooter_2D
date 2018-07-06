@@ -21,6 +21,9 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Plates")
         {
+            GameObject gameplayScore = GameObject.Find("EventSystem");
+            Gameplay scoring = gameplayScore.GetComponent<Gameplay>();
+            scoring.currentScore = scoring.currentScore + 10;
             Destroy(collision.gameObject);
         }
     }
