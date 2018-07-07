@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Gameplay : MonoBehaviour
@@ -22,6 +23,7 @@ public class Gameplay : MonoBehaviour
 
     private bool launchPlateStatus;
 
+    public GameObject cameraGyro;
     public GameObject parentGameObject;
     public GameObject launchPad;
     public GameObject prefabPlate;
@@ -44,12 +46,11 @@ public class Gameplay : MonoBehaviour
 	void Update ()
     {
         cubeBoundPosition = cubeBoundaries.transform.position;
-        Debug.Log(cubeBoundaries);
         debugText.text = cubeBoundPosition.y + " ";
         if((cubeBoundPosition.y > 0 && launchPlateStatus == true) || Input.GetMouseButtonDown(0))
         {
             LaunchPlate();
-            timerPlate = 3.0f;
+            timerPlate = 5.0f;
             tempPlate = platesLeft;
         }
         if(timerPlate > 0)
@@ -92,16 +93,24 @@ public class Gameplay : MonoBehaviour
         if(platesLeft > 0 && launchPlateStatus == true)
         {
             platesLeft--;
-            Vector3 spawner = new Vector3(0, -5, 0);
+            
             GameObject Plate = Instantiate(prefabPlate) as GameObject;
             Plate.transform.parent = parentGameObject.transform;
-            Plate.transform.position = spawner/*transform.localPosition*/ + Camera.main.transform.forward * -5;
-            Debug.Log(transform.localPosition);
+            Vector3 spawner = new Vector3((transform.localPosition.x - Random.Range(-6, 6)), transform.localPosition.y, transform.localPosition.z);
+            Plate.transform.position = spawner + Camera.main.transform.forward * -5;
             Rigidbody rb = Plate.GetComponent<Rigidbody>();
-            rb.velocity = Camera.main.transform.up * 60;
+            rb.velocity = Camera.main.transform.up * 40;
             launchPlateStatus = false;
+            GyroControl disableGyro = cameraGyro.GetComponent<GyroControl>();
+            disableGyro.disableGyroTemp = true;
+            
             //timerPlate = 3.0f;
             //tempPlate = platesLeft;
         }
+    }
+
+    public void ResetScene()
+    {
+        SceneManager.LoadScene("Main Gameplay");
     }
 }

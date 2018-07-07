@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class GyroControl : MonoBehaviour
 {
-
+    public bool disableGyroTemp = false;
+    public float timer;
     private bool gyroEnabled;
     private Gyroscope gyro;
 
@@ -28,9 +29,21 @@ public class GyroControl : MonoBehaviour
     void Update()
     {
 
-        if (gyroEnabled)
+        if (gyroEnabled && disableGyroTemp == false)
         {
             transform.localRotation = gyro.attitude * rot;
+        }
+        if(disableGyroTemp)
+        {
+            timer = 3.0f;
+        }
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        if(timer < 0 && disableGyroTemp)
+        {
+            disableGyroTemp = false;
         }
         
     }
